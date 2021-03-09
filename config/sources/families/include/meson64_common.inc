@@ -21,19 +21,14 @@ GOVERNOR=conservative
 
 case $BRANCH in
 	
-	legacy)
-		KERNELSOURCE='https://github.com/hardkernel/linux'
-		KERNELBRANCH='branch:odroidg12-4.9.y'
-		KERNELDIR='linux-odroid'
+	current)
+		KERNELSOURCE='https://github.com/khadas/khadas-linux-kernel'
+		KERNELBRANCH='branch:master'
+		KERNELDIR='linux-khadas'
 	;;
 
-        current)
-                KERNELBRANCH='branch:linux-5.10.y'
-                KERNELPATCHDIR='meson64-current'
-        ;;
-
         dev)
-		KERNELBRANCH='branch:linux-5.11.y'
+		KERNELBRANCH='branch:master'
 		KERNELPATCHDIR='meson64-dev'
         ;;
 
@@ -226,7 +221,7 @@ family_tweaks_bsp()
 	    EndSection
 	EOF
 
-	elif [[ $BOARD == odroidn2 || $BOARD == odroidc4 || $BOARD == vim2 ]]; then
+	elif [[ $BOARD == odroidn2 || $BOARD == odroidc4 || $BOARD == vim3 ]]; then
 
 	cat <<-EOF > "$destination"/etc/X11/xorg.conf
 	Section "Device"
