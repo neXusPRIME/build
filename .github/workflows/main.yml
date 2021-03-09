@@ -26,11 +26,10 @@ jobs:
       # Build
       - name: Build
         run: |
-          ./compile.sh BOARD="kvim3" BRANCH="current" RELEASE="buster" CARD_DEVICE="/dev/sda" \
-KERNEL_ONLY="no" KERNEL_CONFIGURE="no" BUILD_DESKTOP="yes" RELEASE="focal" BUILD_DESKTOP="yes" DESKTOP_ENVIRONMENT="xfce" DESKTOP_ENVIRONMENT_CONFIG_NAME="config_full"
+          ./compile.sh BOARD="kvim3" BRANCH="current" RELEASE="buster" CARD_DEVICE="/dev/sda" KERNEL_ONLY="no" KERNEL_CONFIGURE="no" BUILD_DESKTOP="yes" RELEASE="focal" BUILD_DESKTOP="yes" DESKTOP_ENVIRONMENT="xfce" DESKTOP_ENVIRONMENT_CONFIG_NAME="config_full"
 
-     # Upload to GH Actions Artifacts
-     #${{ github.workspace }}/build/images/*.img.xz
+      # Upload to GH Actions Artifacts
+      #${{ github.workspace }}/build/images/*.img.xz
       - name: 'Upload To GH Artifacts'
         uses: actions/upload-artifact@v2
         with:
